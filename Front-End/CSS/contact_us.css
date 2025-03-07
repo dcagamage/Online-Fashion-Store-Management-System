@@ -1,12 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     background-color: white;
     color: #333;
 }
 
 .container {
     max-width: 1200px;
-    margin: auto;
+    margin: 30px auto;
 }
 
 
