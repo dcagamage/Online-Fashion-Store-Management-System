@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap);
+
 *{
     margin: 0;
     padding: 0;
@@ -5,47 +7,33 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background-color: #fff;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-}
-a:hover{
-    font-weight: bold;
-}
-
 /* NavBar */
 header{
     position: relative;
     padding: 0;
 }
-.navbar{
-    /* background-color: #03045e; */
-    /* background-color: rgba(3, 4, 94, 0.9); */
-    background: linear-gradient(to right, #11ffee, #ff1199);
-    position: relative;
-    width: 100%;
-    height: 60px;
-    margin: 0 auto;
-    padding: 36px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.navbar {
+  all: unset;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: linear-gradient(to right, #11ffee, #ff1199);
+  height: 60px;
+  margin: 0 auto;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
 .navbar a{
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  gap: 10px;
 }
 .navbar a:hover{
     font-weight: bold;
@@ -243,6 +231,8 @@ footer p{
     opacity: 0.5;
 }
 .footer-col a{
+    text-decoration: none;
+    color: #fff;
     font-size: 16px;
 }
 .footer-col a:hover{
