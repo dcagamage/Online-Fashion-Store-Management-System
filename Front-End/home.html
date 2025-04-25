@@ -5,64 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/home.css">
+
     <title>Vogue Vista | Online Fashion Store</title>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" 
     rel="stylesheet"> -->
     <script src="https://kit.fontawesome.com/99536449b3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/home.css">
     <!-- <link rel="stylesheet" href="CSS/products_1.css"> -->
     <link rel="stylesheet" href="CSS/navbar-footer.css">
 </head>
 
 <body>
 
-    <!-- navigation bar -->
+    <!-- Navigation Bar -->
     <header>
         <div class="navbar">
             <div class="logo">
                 <img src="https://t3.ftcdn.net/jpg/03/24/75/46/360_F_324754632_LRC1yH2prRSccyk3gyEF3W8ptZxSElCP.jpg" alt="logo" class="logo_img">
-                <a href="home.html">Vogue Vista</a>
+                <a href="#">Vogue Vista</a>
             </div>
             <ul class="links">
-                <li><a href="home.html">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
             <div class="btn_container">
-                <i class="fa-solid fa-cart-shopping cart-icon"></i>
                 <i class="fa-regular fa-heart heart-icon" id="wishlist"></i>
-                <a href="login.html" class="action_btn">Login</a>
+                <!-- <a href="#" class="py-2 rounded-pill color-primary-bg">
+                        <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
+                        <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
+                    </a> -->
+                
+                <div class="cart-container">
+                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                    <span class="cart-item-count">0</span> 
+                </div>
+                <!-- <a href="Login-Register/login.html" class="action_btn">Login</a> -->
+                <a href="login.html">
+                    <i class="fa-regular fa-circle-user user-icon" href="Login-Register/login.html"></i>
+                </a>
                 <div class="toggle_btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
         </div>
+
         <div class="dropdown_menu">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="contact-us.html">Contact</a></li>
-            <li><a href="login.html" class="action_btn">Login</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="" class="action_btn">Login</a></li>
         </div>
-
-        <div class="white-strip"></div>
-        
-        <!-- hero section -->
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <h1>Elevate Your Style <br> Shop the Latest Trends!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <!-- <a href="" class="btn">Explore Now &#8594;</a> -->
-                </div>
-                <div class="col-2">
-                    <img src="https://img.freepik.com/premium-vector/colorful-outline-icons-fashion-accessories_123891-90249.jpg?semt=ais_hybrid" alt="hero-img">    
-                </div>
+    </header> 
+    <!-- End of NavBar -->
+	
+	<!-- hero section -->
+    <div class="hero">
+		<div class="container">
+        <div class="row">
+            <div class="col-2">
+                <h1>Elevate Your Style <br> Shop the Latest Trends!</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <!-- <a href="" class="btn">Explore Now &#8594;</a> -->
+            </div>
+            <div class="col-2">
+                <img src="https://img.freepik.com/premium-vector/colorful-outline-icons-fashion-accessories_123891-90249.jpg?semt=ais_hybrid" alt="hero-img">    
             </div>
         </div>
-    </header>
+		</div>
+    </div>
 
     <br>    
     <!-- categories -->
@@ -87,29 +101,37 @@
         </div>
     </div>
     
-    <!--featured products-->
+    <!--featured products-->  
     <div class="small-container">
         <h2 class="title">Featured Products</h2>
-        <div class="row">
+        <div class="row" style="align-items: center;">
             <div class="col-4">
-                <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png">
-                <h4>Product 1</h4>
-                <p>$$$</p>
+                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
+                <img src="images/Product/36.jpg">
+                <h4>Printed Top</h4>
+                <p>Rs. 2500.00</p>
+                <button class="add-cart-btn">Add to Cart</button>
             </div>
             <div class="col-4">
-                <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png">
-                <h4>Product 2</h4>
-                <p>$$$</p>
+                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
+                <img src="images/Product/46.jpg">
+                <h4>Long Sleeve Casual Shirt</h4>
+                <p>Rs. 2000.00</p>
+                <button class="add-cart-btn">Add to Cart</button>                
             </div>
             <div class="col-4">
-                <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png">
-                <h4>Product 3</h4>
-                <p>$$$</p>
+                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
+                <img src="images/Product/56.jpg">
+                <h4>Floral Casual Dress</h4>
+                <p>Rs. 1500.00</p>
+                <button class="add-cart-btn">Add to Cart</button>
             </div>
             <div class="col-4">
-                <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png">
-                <h4>Product 4</h4>
-                <p>$$$</p>
+                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
+                <img src="images/Product/66.jpg">
+                <h4>Graphic T-Shirt</h4>
+                <p>Rs. 1000.00</p>
+                <button class="add-cart-btn">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -193,6 +215,7 @@
             <div class="footer-col company-info">
                 <img src="https://t3.ftcdn.net/jpg/03/24/75/46/360_F_324754632_LRC1yH2prRSccyk3gyEF3W8ptZxSElCP.jpg"
                  alt="Company Logo" class="company-logo">
+                 <br>
                 <div class="company-text">
                     <h3>Vogue Vista</h3>
                     <p>"Lorem ipsum dolor sit amet"</p>
@@ -204,11 +227,14 @@
                     Dolore illo recusandae assumenda lorem ipsum dolor sit amet.</p>
             </div>
             <div class="footer-col">
-                <h3>Quick Links</h3>
+                <h3>Account</h3>
                 <ul class="menu">
-                    <li><a href="home.html">Home</a></li>
+                    <!-- <li><a href="home.html">Home</a></li>
                     <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li>
+                    <li><a href="">Services</a></li> -->
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Shopping Cart</a></li>
+                    <li><a href="#">Wishlist</a></li>
                 </ul>
             </div>
             <div class="footer-col">

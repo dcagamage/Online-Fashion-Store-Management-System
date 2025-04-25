@@ -63,6 +63,13 @@ header .row{
     margin-top: 30px;
 }
 
+/* ---hero--- */
+.hero{
+    background: radial-gradient(#c4ddfe, #fed8f7);
+    margin-top: 10px;
+    padding: 30px 0;
+}
+
 /* categories + fp */
 .small-container{
     max-width: 1080px;
@@ -92,6 +99,7 @@ header .row{
     min-width: 200px;
     margin-bottom: 50px;
     transition: transform 0.5s;
+    text-align: center;
 }
 .col-4 img{
     width: 100%;
@@ -136,7 +144,7 @@ header .row{
 /* featured products */
 .title{
     text-align: center;
-    margin: 10px auto 70px;
+    margin: 10px auto 40px;
     position: relative;
     line-height: 60px;
     color: #555;
@@ -155,6 +163,20 @@ header .row{
 h4{
     color: #555;
     font-weight: normal;
+}
+.add-cart-btn {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.add-cart-btn:hover {
+    background-color: #005f8a;
 }
 
 /* ---offer--- */
