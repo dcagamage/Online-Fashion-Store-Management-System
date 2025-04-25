@@ -18,7 +18,8 @@ h3{
 }
 
 .product:hover img{
-    opacity:0.7;
+    opacity:0.9;
+    transform: scale(1.02);
 }
 
 .product .buy-btn{
@@ -51,6 +52,7 @@ h3{
 
 #women > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
     background-color: black;
+    /* background-color: #10106b; */
 }
 #men > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
     background-color:rgb(255, 0, 183) ;
@@ -58,7 +60,7 @@ h3{
 }
 
 #men > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
-    background-color: black;
+    background-color: #10106b;
 }
 #women > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
     background-color:rgb(255, 0, 183) ;
