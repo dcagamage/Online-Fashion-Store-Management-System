@@ -51,7 +51,7 @@ h3{
 }
 
 #women > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
-    background-color: black;
+    background-color: #10106b;
     /* background-color: #10106b; */
 }
 #men > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
@@ -68,7 +68,7 @@ h3{
 }
 
 #kids > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
-    background-color: black;
+    background-color: #10106b;
 }
 #kids > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
     background-color:rgb(255, 0, 183) ;
@@ -76,7 +76,7 @@ h3{
 }
 
 #watch > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
-    background-color: black;
+    background-color: #10106b;
 }
 #watch > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
     background-color:rgb(255, 0, 183) ;
