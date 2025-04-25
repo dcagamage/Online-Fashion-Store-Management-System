@@ -52,7 +52,6 @@ h3{
 
 #women > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
     background-color: #10106b;
-    /* background-color: #10106b; */
 }
 #men > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
     background-color:rgb(255, 0, 183) ;
