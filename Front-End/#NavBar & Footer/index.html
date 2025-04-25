@@ -10,7 +10,7 @@
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar-footer.css">
 </head>
 
 <body>
@@ -29,9 +29,20 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
             <div class="btn_container">
-                <i class="fa-solid fa-cart-shopping cart-icon"></i>
                 <i class="fa-regular fa-heart heart-icon" id="wishlist"></i>
-                <a href="Login-Register/login.html" class="action_btn">Login</a>
+                <!-- <a href="#" class="py-2 rounded-pill color-primary-bg">
+                        <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
+                        <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
+                    </a> -->
+                
+                <div class="cart-container">
+                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                    <span class="cart-item-count">0</span>
+                </div>
+                <!-- <a href="Login-Register/login.html" class="action_btn">Login</a> -->
+                <a href="#">
+                    <i class="fa-regular fa-circle-user user-icon" href="Login-Register/login.html"></i>
+                </a>
                 <div class="toggle_btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
@@ -43,7 +54,7 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
-            <li><a href="" class="action_btn">Login</a></li>
+            <li><a href="#" class="action_btn">Login</a></li>
         </div>
     </header> 
     <!-- End of NavBar -->
