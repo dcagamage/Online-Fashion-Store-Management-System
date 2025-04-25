@@ -53,18 +53,19 @@ h3{
 #women > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
     background-color: #10106b;
 }
+#women > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
+    background-color:rgb(255, 0, 183) ;
+    color:aqua;
+}
+#men > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
+    background-color: #10106b;
+}
 #men > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
     background-color:rgb(255, 0, 183) ;
     color:aqua;
 }
 
-#men > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
-    background-color: #10106b;
-}
-#women > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
-    background-color:rgb(255, 0, 183) ;
-    color:aqua;
-}
+
 
 #kids > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
     background-color: #10106b;
@@ -77,7 +78,17 @@ h3{
 #watch > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
     background-color: #10106b;
 }
+
 #watch > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
     background-color:rgb(255, 0, 183) ;
+    color:aqua;
+}
+
+#watch > div.container.py-5 > div > nav > ul > li.page-item.active > a{
+    background-color: #10106b;
+}
+
+#watch > div.container.py-5 > div > nav > ul > li:nth-child(n):hover>a{
+    background-color: rgb(255, 0, 183);
     color:aqua;
 }
