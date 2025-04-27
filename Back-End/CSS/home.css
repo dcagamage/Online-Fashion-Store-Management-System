@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* hero section */
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px ;
+}
+.col-2 a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+.col-2 img{
+     max-width: 100%;
+     padding: 50px 0;
+}
+.col-2 h1{
+    font-size: 44px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+.btn{
+    display: inline-block;
+    background: #ff1199;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5;
+}
+.btn:hover{
+    background: #c11c84;
+}
+header{
+    background: radial-gradient(#c4ddfe, #fed8f7);
+}
+header .row{
+    margin-top: 30px;
+}
+
+/* ---hero--- */
+.hero{
+    background: radial-gradient(#c4ddfe, #fed8f7);
+    margin-top: 10px;
+    padding: 30px 0;
+}
+
+/* categories + fp */
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.card-btn {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: #0b75ff;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+.card-btn:hover {
+    background: #0147ab;
+    font-weight: bold;
+}
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+    text-align: center;
+}
+.col-4 img{
+    width: 100%;
+}
+.col-4 a{
+    text-align: center;
+}
+.col-4 p{
+    font-size: 14px;
+}
+.col-4:hover{
+    transform: translateY(-5px);
+}
+
+/*
+.category-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 50px;
+    padding: 20px;
+}
+.card {
+    flex: 1;
+    max-width: 23%;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.card:hover {
+    transform: scale(1.05);
+} */
+
+/* featured products */
+.title{
+    text-align: center;
+    margin: 10px auto 40px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+.title::after{
+    content: '';
+    background: #ff007f;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h4{
+    color: #555;
+    font-weight: normal;
+}
+.add-cart-btn {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.add-cart-btn:hover {
+    background-color: #005f8a;
+}
+
+/* ---offer--- */
+.offer{
+    background: radial-gradient(#c4ddfe, #fed8f7);
+    margin-top: 50px;
+    padding: 30px 0;
+}
+.col-2 .offer-img{
+    padding: 50px;
+}
+small{
+    color: #555;
+}
+
+/* ---testimonial--- */
+.testimonial{
+    padding-top: 80px;
+}
+.testimonial .col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.testimonial .col-3 img{
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.testimonial .col-3:hover{
+    transform: translateY(-10px);
+}
+.fa-quote-left{
+    font-size: 34px;
+    color: #1035ac;
+}
+.rating .fa{
+    color: #fdcc0d;
+}
+.col-3 p{
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+}
+.testimonial .col-3 h3{
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 992px){
+    .row{
+        align-items: center;
+        text-align: center;
+    }
+    .col-2{
+        flex-basis: 100%;
+    }
+    .testimonial .col-3, .col-4{
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 576px){
+    .testimonial .col-3, .col-4{
+        flex-basis: 100%;
+    }
+}
