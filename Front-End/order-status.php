@@ -16,9 +16,9 @@ $orderData = null;
 $error = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $customerId = $conn->real_escape_string($_POST['customer_id']);
+    $OrderId = $conn->real_escape_string($_POST['Id']);
 
-    $result = $conn->query("SELECT * FROM orders1 WHERE customer_id = '$customerId'");
+    $result = $conn->query("SELECT * FROM orders2 WHERE Id = '$OrderId'");
     
     if ($result && $result->num_rows > 0) {
         $orderData = [];
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $orderData[] = $row;
         }
     } else {
-        $error = "No order found for the given Customer ID.";
+        $error = "No order found for the given Order ID.";
     }
 
 }
@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST">
         <input 
             type="text" 
-            name="customer_id" 
-            placeholder="Enter your Customer ID" 
+            name="Id" 
+            placeholder="Enter your Order ID" 
             class="input-small" 
             autocomplete="off"
             required
@@ -101,32 +101,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php foreach ($orderData as $data): ?>
         <hr>
         <div class="order-details-step">
-            <h3><i class="fa-solid fa-receipt"></i> Order ID: <?= htmlspecialchars($data['customer_id']) ?></h3>
+            <h3><i class="fa-solid fa-receipt"></i> Order ID: <?= htmlspecialchars($data['Id']) ?></h3>
 
             <div class="step-section">
                 <h4><i class="fa-solid fa-user"></i> Customer Details</h4>
-                <p><strong>Phone Number:</strong> <?= htmlspecialchars($data['phone_number']) ?></p>
+                <p><strong>Phone Number:</strong> <?= htmlspecialchars($data['Phone_number']) ?></p>
             </div>
 
             <div class="step-section">
                 <h4><i class="fa-solid fa-location-dot"></i> Delivery Address</h4>
-                <p><strong>Address:</strong> <?= htmlspecialchars($data['address']) ?></p>
-                <p><strong>Type:</strong> <?= htmlspecialchars($data['address_type']) ?></p>
+                <p><strong>Address:</strong> <?= htmlspecialchars($data['Address']) ?></p>
+                <p><strong>Type:</strong> <?= htmlspecialchars($data['Address_type']) ?></p>
             </div>
 
             <div class="step-section">
                 <h4><i class="fa-solid fa-money-bill-wave"></i> Payment Info</h4>
-                <p><strong>Method:</strong> <?= htmlspecialchars($data['payment_method']) ?></p>
-                <p><strong>Status:</strong> <?= htmlspecialchars($data['payment_status']) ?></p>
+                <p><strong>Method:</strong> <?= htmlspecialchars($data['Payment_method']) ?></p>
+                <p><strong>Status:</strong> <?= htmlspecialchars($data['Payment_status']) ?></p>
             </div>
 
             <div class="step-section">
                 <h4><i class="fa-solid fa-box"></i> Product Info</h4>
-                <p><strong>Product:</strong> <?= htmlspecialchars($data['product_name']) ?></p>
                 <p><strong>Cart ID:</strong> <?= htmlspecialchars($data['cart_id']) ?></p>
-                <p><strong>Ordered Date:</strong> <?= htmlspecialchars($data['ordered_date']) ?></p>
-                <p><strong>Ordered Time:</strong> <?= htmlspecialchars($data['ordered_time']) ?></p>
-                <img src="<?= htmlspecialchars($data['product_image']) ?>" width="100" alt="Product Image">
+                <p><strong>Delivery ID:</strong> <?= htmlspecialchars($data['Delivery_id']) ?></p>
+                <p><strong>Ordered Date:</strong> <?= htmlspecialchars($data['Ordered_date']) ?></p>
+                <p><strong>Ordered Time:</strong> <?= htmlspecialchars($data['Ordered_time']) ?></p>
             </div>
 
             <div class="step-section">
@@ -144,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     foreach ($steps as $step => $icon) {
                         $active = $statusReached ? 'step-box active' : 'step-box';
                         echo "<div class='$active'><div class='icon'>$icon</div><div class='label'>$step</div></div>";
-                        if ($step === $data['status']) $statusReached = false;
+                        if ($step === $data['Status']) $statusReached = false;
                     }
                     ?>
                 </div>
