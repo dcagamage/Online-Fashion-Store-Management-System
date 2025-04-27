@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
             </div>
             <ul class="links">
                 <li><a href="home.html">Home</a></li>
-                <li><a href="product-women.html">Shop</a></li>
+                <li><a href="product-women.php">Shop</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
@@ -89,10 +89,10 @@ if ($result->num_rows > 0) {
         <nav aria-label="Page navigation example">
                 <h5 class="mt-3">Categories</h5>
                 <ul class="pagination">
-                  <li class="page-item active"><a class="page-link" href="product-women.html">Women</a></li>
-                  <li class="page-item "><a class="page-link" href="product-men.html">Men</a></li>
-                  <li class="page-item"><a class="page-link" href="product-kids.html">Kids</a></li>
-                  <li class="page-item"><a class="page-link" href="product-watch-collection.html">Accessories</a></li>
+                  <li class="page-item active"><a class="page-link" href="product-women.php">Women</a></li>
+                  <li class="page-item "><a class="page-link" href="product-men.php">Men</a></li>
+                  <li class="page-item"><a class="page-link" href="product-kids.php">Kids</a></li>
+                  <li class="page-item"><a class="page-link" href="product-watch-collection.php">Accessories</a></li>
                 </ul>
         </nav>
         </div> 
@@ -100,50 +100,53 @@ if ($result->num_rows > 0) {
             <h2>Womens</h2>
             <p>Explore Vogue Vista’s extensive collection of women’s clothing and accessories. From elegant dresses to casual wear and everything in between, find stylish and high-quality pieces to enhance your wardrobe.</p>
         </div>
+
+        <!--dress section-->
+        
         <div class="row mx-auto container">
-
-            <!--dress section-->
-
             <h3>DRESS</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/30.jpg">
                 <h5 class="p-name">Sleeveless Dress</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/31.jpg">
                 <h5 class="p-name">Batik Dress</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/40.jpg">
                 <h5 class="p-name">Long Floral Dress</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/41.jpg">
                 <h5 class="p-name">Short Dress</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
-
+        </div>
+        
+        <div class="row mx-auto container" style="justify-content: left !important;">
             <?php foreach ($products['Dress'] as $product): ?>
-                <div class="product text-center col-lg-3 col-md-4 col-12">
+                <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="<?= $product['Image']; ?>" alt="<?= $product['Name']; ?>">
                     <h5 class="p-name"><?= $product['Name'] ?></h5>
                     <h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
@@ -152,49 +155,53 @@ if ($result->num_rows > 0) {
                     </a>
                 </div>
             <?php endforeach; ?>
+        </div>
 
             <!--trousers section-->
 
+        
+        <div class="row mx-auto container">
             <h3>TROUSERS</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/33.jpg">
                 <h5 class="p-name">Cotton Trouser</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/32.jpg">
                 <h5 class="p-name">Cotton Trouse</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/34.jpg">
                 <h5 class="p-name">Office Trouser</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/35.jpg">
                 <h5 class="p-name">Office Trouser</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
-
+        </div>
+        <div class="row mx-auto container" style="justify-content: left !important;">
             <?php foreach ($products['Trouser'] as $product): ?>
-                <div class="product text-center col-lg-3 col-md-4 col-12">
+                <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="<?= $product['Image']; ?>" alt="<?= $product['Name']; ?>">
                     <h5 class="p-name"><?= $product['Name'] ?></h5>
                     <h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
@@ -203,50 +210,53 @@ if ($result->num_rows > 0) {
                     </a>
                 </div>
             <?php endforeach; ?>
+        </div>
+            
 
-            <!--blouse section-->
-
-
+<!--blouse section-->
+       
+        <div class="row mx-auto container">
             <h3>BLOUSE</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/36.jpg">
                 <h5 class="p-name">Printed Top</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/37.jpg">
                 <h5 class="p-name">Ladies Top</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/38.jpg">
                 <h5 class="p-name">Ladies Top</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="images/Product/39.jpg">
                 <h5 class="p-name">Long Sleeve Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
+                <h6 class="p-price">Rs. 2,000.00</h6>
                 <a href="main_item.html">
                     <button class="buy-btn">View Product</button>
                 </a>
             </div>
-
+        
+        <div class="row mx-auto container" style="justify-content: left !important;">
             <?php foreach ($products['Blouse'] as $product): ?>
-                <div class="product text-center col-lg-3 col-md-4 col-12">
+                <div class="product text-center col-lg-3 col-md-6 col-12">
                 <img class="img-fluid mb-3" src="<?= $product['Image']; ?>" alt="<?= $product['Name']; ?>">
                     <h5 class="p-name"><?= $product['Name'] ?></h5>
                     <h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
@@ -255,15 +265,16 @@ if ($result->num_rows > 0) {
                      </a>
                 </div>
             <?php endforeach; ?>
+        </div>
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination mt-5 pb-4">
-                  <li class="page-item active"><a class="page-link" href="product-women.html">1</a></li>
-                  <li class="page-item"><a class="page-link" href="product-men.html">2</a></li>
-                  <li class="page-item"><a class="page-link" href="product-kids.html">3</a></li>
-                  <li class="page-item"><a class="page-link" href="product-watch-collection.html">4</a></li>
+                  <li class="page-item active"><a class="page-link" href="product-women.php">1</a></li>
+                  <li class="page-item"><a class="page-link" href="product-men.php">2</a></li>
+                  <li class="page-item"><a class="page-link" href="product-kids.php">3</a></li>
+                  <li class="page-item"><a class="page-link" href="product-watch-collection.php">4</a></li>
                   <li class="page-item">
-                    <a class="page-link" href="product-men.html" aria-label="Next">
+                    <a class="page-link" href="product-men.php" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                     </a>
                   </li>
