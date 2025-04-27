@@ -5,7 +5,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM product1 WHERE Category IN ('Dress', 'Trouser', 'Blouse') AND Status = 'available'  OR Status ='out of stock'";
+$sql = "SELECT * FROM product1 WHERE Category IN ('Dress', 'Trouser', 'Blouse') AND Status = 'available'";
 $result = $conn->query($sql);
 $products=[
     'Dress' => [],
