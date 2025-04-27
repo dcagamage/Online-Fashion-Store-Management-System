@@ -1,0 +1,367 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "vogue_vista1");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM product1 WHERE Category IN ('Pants', 'Shirts', 'T-shirts') AND Status = 'available'";
+$result = $conn->query($sql);
+$products=[
+    'Pants' => [],
+    'Shirts' => [],
+    'T-shirts' => []
+];
+
+
+if ($result->num_rows > 0) {
+    while ($product = $result->fetch_assoc()) {
+        $category = $product['Category']; // Directly use the Category column value
+        if (in_array($category, ['Pants', 'Shirts', 'T-shirts'])) {
+            $products[$category][] = $product; // Add product to the corresponding category array
+        }
+    }
+} else {
+    echo "No products found.";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vogue Vista | Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="CSS/product.css">
+    <link rel="stylesheet" href="CSS/navbar-footer.css">
+    
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://t3.ftcdn.net/jpg/03/24/75/46/360_F_324754632_LRC1yH2prRSccyk3gyEF3W8ptZxSElCP.jpg" alt="logo" class="logo_img">
+                <a href="#">Vogue Vista</a>
+            </div>
+            <ul class="links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="product-men.php">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <div class="btn_container">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <i class="fa-regular fa-heart heart-icon" id="wishlist"></i>
+                <a href="login.html" class="action_btn">Login</a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+            <li><a href="login.html" class="action_btn">Login</a></li>
+        </div>
+    </header> 
+    <!-- End of NavBar -->
+
+    
+    <section id="men">
+        <div class="row mx-auto container">
+        <nav aria-label="Page navigation example">
+            <h5 class="mt-5">Categories</h5>
+            <ul class="pagination pb-4">
+              <li class="page-item "><a class="page-link" href="product-women.php">Women</a></li>
+              <li class="page-item active"><a class="page-link" href="product-men.php">Men</a></li>
+              <li class="page-item"><a class="page-link" href="product-kids.php">Kids</a></li>
+              <li class="page-item"><a class="page-link" href="product-watch-collection.php">Accessories</a></li>
+            </ul>
+        </nav>
+        </div> 
+
+        <div class="container py-2">
+            <h2>Mens</h2>
+            <p>Explore the latest trends in men’s fashion at Vogue Vista. From casual wear to formal wear, our men’s clothing collection offers something for every occasion.
+                 Shop trendy accessories, innerwear, sportwear, and more. Discover quality fashion at unbeatable prices.</p>
+        </div>
+        <div class="row mx-auto container">
+
+            <!--pants section-->
+
+            <h3>PANTS</h3>
+            <hr>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/42.jpg">
+                </a>
+                <h5 class="p-name">Men's Joggers</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/43.jpg">
+                </a>
+                <h5 class="p-name">Smart Casual</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/45.jpg">
+                </a>
+                <h5 class="p-name">Men's Joggers</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/44.jpg">
+                </a>
+                <h5 class="p-name">Smart Casual</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mx-auto container" style="justify-content: left !important;">
+            <?php foreach ($products['Pants'] as $product): ?>
+                <div class="product text-center col-lg-3 col-md-6 col-12">
+                <img class="img-fluid mb-3" src="<?= $product['Image']; ?>" alt="<?= $product['Name']; ?>">
+                    <h5 class="p-name"><?= $product['Name'] ?></h5>
+                    <h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="main_item.html">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+            <!--shirts section-->
+        <div class="row mx-auto container">
+            <h3>SHIRTS</h3>
+            <hr>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/46.jpg">
+                </a>
+                <h5 class="p-name">Long Sleeve Casual Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/47.jpg">
+                </a>
+                <h5 class="p-name">Long Sleeve Casual Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/48.jpg">
+                </a>
+                <h5 class="p-name">Denim Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/49.jpg">
+                </a>
+                <h5 class="p-name">Denim Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mx-auto container" style="justify-content: left !important;">
+            <?php foreach ($products['Shirts'] as $product): ?>
+                <div class="product text-center col-lg-3 col-md-6 col-12">
+                <img class="img-fluid mb-3" src="<?= $product['Image']; ?>" alt="<?= $product['Name']; ?>">
+                    <h5 class="p-name"><?= $product['Name'] ?></h5>
+                    <h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="main_item.html">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+            <!--tshirt section-->
+        <div class="row mx-auto container">
+            <h3>T-SHIRTS</h3>
+            <hr>
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/50.jpg">
+                </a>
+                <h5 class="p-name">Neck T-Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/51.jpg">
+                </a>
+                <h5 class="p-name">Neck T-Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/52.jpg">
+                </a>
+                <h5 class="p-name">Neck T-Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+
+            <div class="product text-center col-lg-3 col-md-4 col-12">
+                <a href="main_item.html">
+                    <img class="img-fluid mb-3" src="images/Product/53.jpg">
+                </a>
+                <h5 class="p-name">Formal T-Shirt</h5>
+                <h6 class="p-price">Rs. 2,000.00</h6>
+                <a href="main_item.html">
+                    <button class="buy-btn">View Product</button>
+                </a>
+            </div>
+        
+
+        <div class="row mx-auto container" style="justify-content: left !important;">
+            <?php foreach ($products['T-shirts'] as $product): ?>
+                <div class="product text-center col-lg-3 col-md-6 col-12">
+                <img class="img-fluid mb-3" src="<?= $product['Image']; ?>" alt="<?= $product['Name']; ?>">
+                    <h5 class="p-name"><?= $product['Name'] ?></h5>
+                    <h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="main_item.html">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination mt-5 pb-4">
+                  <li class="page-item">
+                    <a class="page-link" href="product-women.php" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item "><a class="page-link" href="product-women.php">1</a></li>
+                  <li class="page-item active"><a class="page-link" href="product-men.html">2</a></li>
+                  <li class="page-item"><a class="page-link" href="product-kids.php">3</a></li>
+
+                  <li class="page-item"><a class="page-link" href="product-watch-collection.php">4</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="product-kids.php" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+            </nav>
+            
+        </div>
+      
+    </section>
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="footer-col company-info">
+                <img src="https://t3.ftcdn.net/jpg/03/24/75/46/360_F_324754632_LRC1yH2prRSccyk3gyEF3W8ptZxSElCP.jpg"
+                 alt="Company Logo" class="company-logo">
+                <div class="company-text">
+                    <h3>Vogue Vista</h3>
+                    <p>"Lorem ipsum dolor sit amet"</p>
+                </div>
+            </div>
+            <div class="footer-col about">
+                <h3>About Us</h3>
+                <p class="about">Lorem, ipsum dolor sit amet illo tio consectetur adipisicing elit. 
+                    Dolore illo recusandae assumenda lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info:</h3>
+                <ul>
+                    <li><a href="">Phone: (+94) 777022022</a></li>
+                    <li><a href="">E-mail: voguevista@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="socials">
+            <h3>Follow Us</h3>
+            <ul class="social_icon">
+                <li><a href=""><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href=""><ion-icon name="logo-twitter"></ion-icon></a></li>
+                <li><a href=""><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                <li><a href=""><ion-icon name="logo-instagram"></ion-icon></a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <hr>
+            <p>© 2025 Vogue Vista | All Rights Reserved</p>  
+        </div>
+    </footer>
+    <!-- end of footer -->
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
