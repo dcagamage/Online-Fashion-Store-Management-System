@@ -26,17 +26,26 @@
                     <span class="cart-item-count">0</span> 
                 </div>
 
+
                 <?php 
-                    if(isset($_SESSION["username"])) {
+                    if(isset($_SESSION["useremail"])) {
                         // echo '<a href="#" class="action_btn">'.$_SESSION["username"].'</a>';
-                        echo '<a href="#" class="action_btn">
+                        $userid = $_SESSION["userid"];
+                        echo '<a href="Dashboards/UserManagement.html" class="action_btn">
                             <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["username"].'</a>';
                         echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
+                        
+                    } elseif (isset($_SESSION["adminemail"])) {
+                        $adminid = $_SESSION["adminid"]; 
+                        echo '<a href="dashboard-Admin.php" class="action_btn">
+                            <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["adminname"].'</a>';
+                        echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
+
                     } else {
                         echo '<a href="login.php" class="action_btn">Login</a>';
                         echo '<a href="register.php" class="action_btn">Register</a>';
 
-                    } 
+                    }
                 ?>
                 
                 <!-- <a href="login.html">
@@ -56,12 +65,18 @@
             <?php 
                     if(isset($_SESSION["username"])) {
                         // echo '<a href="#" class="action_btn">'.$_SESSION["username"].'</a>';
-                        echo '<li><a href="#" class="action_btn">
-                            '.$_SESSION["username"].'</a></li>';
-                        echo '<li><a href="includes/logout.inc.php" class="action_btn">Logout</a></li>';
+                        echo '<a href="Dashboards/UserManagement.html" class="action_btn">
+                            <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["username"].'</a>';
+                        echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
+
+                    } elseif (isset($_SESSION["adminname"])) {
+                        echo '<a href="dashboard-Admin.php" class="action_btn">
+                            <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["adminname"].'</a>';
+                        echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
+                        
                     } else {
-                        echo '<li><a href="login.php" class="action_btn">Login</a></li>';
-                        echo '<li><a href="register.php" class="action_btn">Register</a></li>';
+                        echo '<a href="login.php" class="action_btn">Login</a>';
+                        echo '<a href="register.php" class="action_btn">Register</a>';
 
                     } 
                 ?>

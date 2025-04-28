@@ -2,7 +2,7 @@
 $serverName="localhost";
 $dbUsername="root";
 $dbPassword="";
-$dbName="fashion_store";
+$dbName="online_fashion_store_management";
 
 $conn = mysqli_connect($serverName,$dbUsername,$dbPassword,$dbName);
 
