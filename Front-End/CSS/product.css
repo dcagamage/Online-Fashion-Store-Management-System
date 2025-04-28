@@ -64,6 +64,7 @@ h3{
     background-color:rgb(255, 0, 183) ;
     color:aqua;
 }
+
 #kids > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
     background-color: #10106b;
 }
@@ -71,6 +72,7 @@ h3{
     background-color:rgb(255, 0, 183) ;
     color:aqua;
 }
+
 #watch > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
     background-color: #10106b;
 }
