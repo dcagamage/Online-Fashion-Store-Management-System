@@ -10,8 +10,8 @@ if(isset($_POST["submit"])){
     require_once 'functions.inc.php';
 
     $emptyInput = emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat);
-    $invalidUid = invalidUid($username);
-    $invaildEmail = invaildEmail($email);
+    // $invalidUid = invalidUid($username);
+    $invalidEmail = invalidEmail($email);
     $pwdMatch = pwdMatch($pwd, $pwdRepeat);
     $uidExists = uidExists($conn, $username, $email); 
 
@@ -19,11 +19,13 @@ if(isset($_POST["submit"])){
         header("Location:../register.php?error=emptyinput");
         exit();
     }
+    /*
     if($invalidUid !== false){
         header("Location:../register.php?error=invaliduid");
         exit();
     }
-    if($invaildEmail !== false){
+    */
+    if($invalidEmail !== false){
         header("Location:../register.php?error=invalidemail");
         exit();
     }

@@ -14,6 +14,19 @@
     include_once 'navbar.php';
 ?>
 
+<?php
+    if (isset($_GET["success"]) && $_GET["success"] == "messagesent") {
+        echo '<div class="alert alert-success">Message sent successfully!</div>';
+    }
+    if (isset($_GET["error"])) {
+        if ($_GET["error"] == "notloggedin") {
+            echo '<div class="alert alert-danger">Please log in to send a message.</div>';
+        }
+        if ($_GET["error"] == "stmtfailed") {
+            echo '<div class="alert alert-danger">Something went wrong. Please try again!</div>';
+        }
+    }
+?>
     
     <div class="container contact-section">
         <h2 class="text-center mb-4">Contact Us</h2>
@@ -26,20 +39,20 @@
                     <li><strong>Email:</strong> voguevista@gmail.com</li>
                     <li><strong>Address:</strong>  No. 171/B, Galle Rd, Panadura, Sri Lanka</li>
                 </ul>
-                <form>
+                <form action="includes/contactus.inc.php" method="POST">
                     <div class="mb-3">
                         <label class="form-label">Your Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your name" required>
+                        <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email Address</label>
-                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                        <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Message</label>
-                        <textarea class="form-control" rows="4" placeholder="Your message" required></textarea>
+                        <textarea class="form-control" name="message" rows="4" placeholder="Your message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
             <div class="col-md-6">
