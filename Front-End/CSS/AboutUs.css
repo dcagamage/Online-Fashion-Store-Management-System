@@ -10,6 +10,7 @@
     width:100% ;
     min-height: 100vh;
     background-color: pink;
+    padding: 60px 0;
 
 }
 .container{
@@ -18,7 +19,10 @@
     margin: auto;
     padding-top:100px;
     overflow: hidden; /* To clear the floats inside */
-
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 .content-section .content{
    float: right;
@@ -30,6 +34,7 @@
 .image-section{
     float: left;
     width: 40%;
+    flex: 1 1 40%;
 }
 .image-section img{
     width:100% ;
@@ -44,17 +49,57 @@
         margin: auto;
         padding-top:100px;
         overflow: hidden; /* To clear the floats inside */
-    
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     .content-section, .image-section {
         float: none;
         width: 100%;
         text-align: center;
+        flex: 1 1 100%;
     }
 
     .image-section img {
         width: 80%;
         margin: auto;
+    
+        
+    }
+    
+    .content-section .title {
+        font-size: 26px;
+       
+
+    }
+
+    .content-section .content h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .content-section .content p {
+        font-size: 16px;
+        text-align: justify;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-section img {
+        width: 100%;
+        margin: auto;
+    }
+
+    .button {
+        width: auto;
+        padding: 10px 25px;
+        margin: 20px auto 0 auto; 
+        align-items: center;
+    }
+    .content-section .content {
+        float: none;
+        width: 100%;
+        text-align: center; /* Center the content */
     }
 }
 .content-section .title{
@@ -62,6 +107,7 @@
     font-size: 28px;
     margin-bottom: 50px;
     color: rgb(12, 164, 252);    
+    
 
     
 
@@ -78,15 +124,26 @@
     
 }
 .button{
+    display: flex;
+    padding: 12px 30px;
     width:50%;
     height: 40px;
     border:none;
     border-radius: 20px;
     margin-top:20px ;
-    font-weight: bold;
+    font-weight: 600;
     color: #fff;
     background-color: #49d8b9;
-    font-size: larger;
+    font-size: 16px;
+    text-align: center;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
 
-
+}
+.button:hover {
+    background-color: #36b79e;
+    cursor: pointer;
 }
