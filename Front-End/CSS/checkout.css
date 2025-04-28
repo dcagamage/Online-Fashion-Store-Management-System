@@ -4,6 +4,7 @@
     grid-template-columns:repeat(2,1fr) ;
     gap: 50px;
     padding: 200px;
+    flex-wrap:wrap;
 }
 .checkoutLayout .right{
     background-color: pink;
@@ -100,6 +101,30 @@ body{
 a{
     text-decoration: none;
 
+}
+@media (max-width: 768px) {
+    .checkoutLayout {
+        flex-direction: column; /* Stack vertically */
+    }
+
+    .returnCart, .right {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .navbar .links,
+    .btn_container {
+        display: none; /* Hide normal nav links */
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+.returnCart .item img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    object-fit: cover;
 }
 
 
