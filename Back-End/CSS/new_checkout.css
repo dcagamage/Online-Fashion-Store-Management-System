@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.cart-section, .order-details-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 48%;
+}
+.cart-section h2, .order-details-section h2 {
+    color: #03045e;
+}
+.item-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.item-details img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.text-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-details-section form input,
+.order-details-section form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.order-details-section form button {
+    padding: 12px 20px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.order-details-section form button:hover {
+    background-color: #00b4d8;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .cart-section, .order-details-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

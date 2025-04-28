@@ -28,13 +28,15 @@
 
 
                 <?php 
-                    if(isset($_SESSION["username"])) {
+                    if(isset($_SESSION["useremail"])) {
                         // echo '<a href="#" class="action_btn">'.$_SESSION["username"].'</a>';
+                        $userid = $_SESSION["userid"];
                         echo '<a href="Dashboards/UserManagement.html" class="action_btn">
                             <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["username"].'</a>';
                         echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
                         
-                    } elseif (isset($_SESSION["adminname"])) {
+                    } elseif (isset($_SESSION["adminemail"])) {
+                        $adminid = $_SESSION["adminid"]; 
                         echo '<a href="dashboard-Admin.php" class="action_btn">
                             <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["adminname"].'</a>';
                         echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
@@ -43,7 +45,7 @@
                         echo '<a href="login.php" class="action_btn">Login</a>';
                         echo '<a href="register.php" class="action_btn">Register</a>';
 
-                    } 
+                    }
                 ?>
                 
                 <!-- <a href="login.html">
@@ -78,8 +80,7 @@
 
                     } 
                 ?>
-            <li><a href="" class="action_btn">Login</a></li>
-            <li><a href="" class="action_btn">Register</a></li>
+            
         </div>
     </header> 
 	
@@ -96,7 +97,10 @@
             <div class="total-price">Rs: 0/=</div>
     
         </div>
-        <button class="btn-buy">Buy-Now</button>
+        <form action="new_checkout.php" method="POST">
+            <button class="btn-buy" type="submit" name="checkout">Buy Now</button>
+        </form>
+
         <i class="fa-solid fa-xmark close"></i>
     </div>
     <!-- End of NavBar -->

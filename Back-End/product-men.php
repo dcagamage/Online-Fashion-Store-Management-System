@@ -1,4 +1,32 @@
 <?php
+$conn = new mysqli("localhost", "root", "", "pro1");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM product1 WHERE Category IN ('Pants', 'Shirt', 'Tshirt') AND Status = 'available'";
+$result = $conn->query($sql);
+$products=[
+    'Pants' => [],
+    'Shirt' => [],
+    'Tshirt' => []
+];
+
+
+if ($result->num_rows > 0) {
+    while ($product = $result->fetch_assoc()) {
+        $category = $product['Category']; // Directly use the Category column value
+        if (in_array($category, ['Pants', 'Shirt', 'Tshirt'])) {
+            $products[$category][] = $product; // Add product to the corresponding category array
+        }
+    }
+} else {
+    // echo "No products found.";
+}
+?>
+
+<?php
     include_once 'header.php';
 ?>
 
@@ -32,152 +60,62 @@
             <p>Explore the latest trends in men’s fashion at Vogue Vista. From casual wear to formal wear, our men’s clothing collection offers something for every occasion.
                  Shop trendy accessories, innerwear, sportwear, and more. Discover quality fashion at unbeatable prices.</p>
         </div>
-        <div class="row mx-auto container">
+        <div class="row mx-auto container" style="justify-content: left !important;">
 
             <!--pants section-->
 
             <h3>PANTS</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/42.jpg">
-                </a>
-                <h5 class="p-name">Men's Joggers</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <?php foreach ($products['Pants'] as $product): ?>
+				<div class="product text-center col-lg-3 col-md-4 col-12">
+				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
+             alt="<?= htmlspecialchars($product['Name']); ?>">
+					<h5 class="p-name"><?= htmlspecialchars($product['Name']); ?></h5>
+					<h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="main_item.php?id=<?= urlencode($product['Id']); ?>">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+				</div>
+			<?php endforeach; ?>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/43.jpg">
-                </a>
-                <h5 class="p-name">Smart Casual</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/45.jpg">
-                </a>
-                <h5 class="p-name">Men's Joggers</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/44.jpg">
-                </a>
-                <h5 class="p-name">Smart Casual</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <br><br>
 
             <!--shirts section-->
 
             <h3>SHIRTS</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            <?php foreach ($products['Shirt'] as $product): ?>
+				<div class="product text-center col-lg-3 col-md-4 col-12">
+				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
+             alt="<?= htmlspecialchars($product['Name']); ?>">
+					<h5 class="p-name"><?= htmlspecialchars($product['Name']); ?></h5>
+					<h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="main_item.php?id=<?= urlencode($product['Id']); ?>">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+				</div>
+			<?php endforeach; ?>
 
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/46.jpg">
-                </a>
-                <h5 class="p-name">Long Sleeve Casual Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/47.jpg">
-                </a>
-                <h5 class="p-name">Long Sleeve Casual Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/48.jpg">
-                </a>
-                <h5 class="p-name">Denim Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/49.jpg">
-                </a>
-                <h5 class="p-name">Denim Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <br><br>
 
             <!--tshirt section-->
 
             <h3>T-SHIRTS</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/50.jpg">
-                </a>
-                <h5 class="p-name">Neck T-Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <?php foreach ($products['Tshirt'] as $product): ?>
+				<div class="product text-center col-lg-3 col-md-4 col-12">
+				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
+             alt="<?= htmlspecialchars($product['Name']); ?>">
+					<h5 class="p-name"><?= htmlspecialchars($product['Name']); ?></h5>
+					<h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="main_item.php?id=<?= urlencode($product['Id']); ?>">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+				</div>
+			<?php endforeach; ?>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/51.jpg">
-                </a>
-                <h5 class="p-name">Neck T-Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <br><br>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/52.jpg">
-                </a>
-                <h5 class="p-name">Neck T-Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <a href="main_item.php">
-                    <img class="img-fluid mb-3" src="images/Product/53.jpg">
-                </a>
-                <h5 class="p-name">Formal T-Shirt</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="main_item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination mt-5 pb-4">
                   <li class="page-item">

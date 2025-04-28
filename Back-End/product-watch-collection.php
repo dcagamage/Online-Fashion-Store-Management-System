@@ -1,4 +1,31 @@
 <?php
+$conn = new mysqli("localhost", "root", "", "pro1");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM product1 WHERE Category IN ('Ladies', 'Gents') AND Status = 'available'";
+$result = $conn->query($sql);
+$products=[
+    'Ladies' => [],
+    'Gents' => []
+];
+
+
+if ($result->num_rows > 0) {
+    while ($product = $result->fetch_assoc()) {
+        $category = $product['Category']; // Directly use the Category column value
+        if (in_array($category, ['Ladies', 'Gents'])) {
+            $products[$category][] = $product; // Add product to the corresponding category array
+        }
+    }
+} else {
+    // echo "No products found.";
+}
+?>
+
+<?php
     include_once 'header.php';
 ?>
 
@@ -30,88 +57,44 @@
         <div class="container py-5">
             <h2>Watch Collection</h2>
             <p>Discover the latest fashion trends with Vogue Vista’s</p>
-        <div class="row mx-auto container">
+        <div class="row mx-auto container" style="justify-content: left !important;">
 
-            <!--ledies watch section-->
+            <!--ladies watch section-->
 
             <h3>LADIES</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/70.jpg">
-                <h5 class="p-name">CK Stainless steel Ladies Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <?php foreach ($products['Ladies'] as $product): ?>
+				<div class="product text-center col-lg-3 col-md-4 col-12">
+				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
+             alt="<?= htmlspecialchars($product['Name']); ?>">
+					<h5 class="p-name"><?= htmlspecialchars($product['Name']); ?></h5>
+					<h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="accessories-item.php?id=<?= urlencode($product['Id']); ?>">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+				</div>
+			<?php endforeach; ?>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/71.jpg">
-                <h5 class="p-name">CK Stainless steel Ladies Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/72.jpg">
-                <h5 class="p-name">Citizen Ladies Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/73.jpg">
-                <h5 class="p-name">Citizen Ladies Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <br><br>
             
 
-            <!--mens watch section-->
+            <!--gents watch section-->
         
-            <h3>MENS</h3>
+            <h3>GENTS</h3>
             <hr>
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/74.jpg">
-                <h5 class="p-name">Titan Mens Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <?php foreach ($products['Gents'] as $product): ?>
+				<div class="product text-center col-lg-3 col-md-4 col-12">
+				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
+             alt="<?= htmlspecialchars($product['Name']); ?>">
+					<h5 class="p-name"><?= htmlspecialchars($product['Name']); ?></h5>
+					<h6 class="p-price">Rs. <?= number_format($product['Price'], 2) ?></h6>
+                    <a href="accessories-item.php?id=<?= urlencode($product['Id']); ?>">
+                        <button class="buy-btn">View Product</button>
+                    </a>
+				</div>
+			<?php endforeach; ?>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/75.jpg">
-                <h5 class="p-name">Titan Mens Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/76.jpg">
-                <h5 class="p-name">Titan Mens Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-                <img class="img-fluid mb-3" src="images/Product/77.jpg">
-                <h5 class="p-name">Titan Mens Watch</h5>
-                <h6 class="p-name">Rs. 2,000.00</h6>
-                <a href="accessories-item.php">
-                    <button class="buy-btn">View Product</button>
-                </a>
-            </div>
+            <br><br>
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination mt-5 pb-4">
