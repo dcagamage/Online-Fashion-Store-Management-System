@@ -6,10 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartContent = document.querySelector(".cart-content");
     const totalPriceElement = document.querySelector(".total-price");
     const cartItemCount = document.querySelector(".cart-item-count");
+	const backdrop = document.querySelector(".backdrop");
 
     // Show/Hide Cart
-    cartIcon.addEventListener("click", () => cart.classList.add("active"));
-    cartClose.addEventListener("click", () => cart.classList.remove("active"));
+    cartIcon.addEventListener("click", () => {
+		cart.classList.add("active");
+		backdrop.classList.add('show'); // Show backdrop when opening cart
+	});
+    cartClose.addEventListener("click", () => {
+		cart.classList.remove("active");
+		backdrop.classList.remove('show'); // Hide backdrop when closing cart
+	});
+	backdrop.addEventListener("click", () => {
+		cart.classList.remove("active");
+		backdrop.classList.remove('show');
+	});
 
     // Add to Cart buttons (for product boxes)
     const addCartButtons = document.querySelectorAll(".add-cart");
