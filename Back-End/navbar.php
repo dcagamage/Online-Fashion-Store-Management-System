@@ -28,15 +28,13 @@
 
 
                 <?php 
-                    if(isset($_SESSION["useremail"])) {
+                    if(isset($_SESSION["username"])) {
                         // echo '<a href="#" class="action_btn">'.$_SESSION["username"].'</a>';
-                        $userid = $_SESSION["userid"];
                         echo '<a href="Dashboards/UserManagement.html" class="action_btn">
                             <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["username"].'</a>';
                         echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
                         
-                    } elseif (isset($_SESSION["adminemail"])) {
-                        $adminid = $_SESSION["adminid"]; 
+                    } elseif (isset($_SESSION["adminname"])) {
                         echo '<a href="dashboard-Admin.php" class="action_btn">
                             <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["adminname"].'</a>';
                         echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
@@ -45,7 +43,7 @@
                         echo '<a href="login.php" class="action_btn">Login</a>';
                         echo '<a href="register.php" class="action_btn">Register</a>';
 
-                    }
+                    } 
                 ?>
                 
                 <!-- <a href="login.html">
@@ -84,6 +82,9 @@
             <li><a href="" class="action_btn">Register</a></li>
         </div>
     </header> 
+	
+	<!--backdrop-->
+    <div class="backdrop"></div>
 
     <!-- Cart -->
     <div class="cart">
