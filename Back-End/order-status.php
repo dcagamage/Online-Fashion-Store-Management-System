@@ -1,16 +1,5 @@
 <?php
-$host = "localhost";
-$username = "root"; 
-$password = "";     
-$dbname = "online_fashion_store_management";
-
-// Connect to MySQL
-$conn = new mysqli($host, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'includes/dbh.inc.php';
 
 $orderData = null;
 $error = null;
@@ -109,7 +98,8 @@ $result = $stmt->get_result();
                 <p><strong>Ordered Time:</strong> <?= htmlspecialchars($data['Ordered_time']) ?></p>
             </div>
 
-            <div class="step-section">
+
+            <!-- <div class="step-section">
                 <h4>Status:</h4>
                 <div class="status-tracker">
                     <?php
@@ -128,7 +118,7 @@ $result = $stmt->get_result();
                     }
                     ?>
                 </div>
-            </div>
+            </div> -->
         </div>
     <?php endforeach; ?>
 <?php elseif ($error): ?>

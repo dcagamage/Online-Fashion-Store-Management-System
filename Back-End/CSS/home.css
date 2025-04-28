@@ -74,6 +74,8 @@ header .row{
 .small-container{
     max-width: 1080px;
     margin: auto;
+    margin-top: 50px;
+    margin-bottom: 0;
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -97,7 +99,7 @@ header .row{
     flex-basis: 25%;
     padding: 10px;
     min-width: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 0;
     transition: transform 0.5s;
     text-align: center;
 }
@@ -144,7 +146,7 @@ header .row{
 /* featured products */
 .title{
     text-align: center;
-    margin: 10px auto 40px;
+    margin: 10px auto 20px;
     position: relative;
     line-height: 60px;
     color: #555;
@@ -164,7 +166,7 @@ h4{
     color: #555;
     font-weight: normal;
 }
-.add-cart-btn {
+.show-more-btn {
     margin-top: 8px;
     padding: 8px 12px;
     background-color: #0077b6;
@@ -175,7 +177,7 @@ h4{
     font-size: 14px;
     transition: 0.3s;
 }
-.add-cart-btn:hover {
+.show-more-btn:hover {
     background-color: #005f8a;
 }
 

@@ -23,6 +23,7 @@ function invalidUid($username){
     return $result;
 }
 */
+
 function invalidEmail($email){
     $result;
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){

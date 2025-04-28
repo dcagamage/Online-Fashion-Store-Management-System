@@ -1,11 +1,7 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "pro1");
+require_once 'includes/dbh.inc.php';
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM product1 WHERE Category IN ('Dress', 'Trouser', 'Blouse') AND Status = 'available'";
+$sql = "SELECT * FROM product WHERE Category IN ('Dress', 'Trouser', 'Blouse') AND Status = 'available'";
 $result = $conn->query($sql);
 $products=[
     'Dress' => [],

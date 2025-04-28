@@ -49,34 +49,43 @@ while ($row = mysqli_fetch_assoc($result)) {
         <h2>Your Cart</h2>
         <br>
         <?php
-            // Display the products using the stored array
+            $totalAmount = 0;
+
             foreach ($products as $product) {
                 $productName = $product['ProductName'];
                 $productPrice = $product['ProductPrice'];
                 $productQuantity = $product['ProductQuantity'];
                 $totalPrice = $productPrice * $productQuantity;
-
-                // Handle the image data (convert binary to base64)
+            
+                $totalAmount += $totalPrice;
+            
+                // Display each cart item
                 $productImage = $product['ProductImage'];
-                $imageData = base64_encode($productImage);  // Convert binary to base64
-
+                $imageData = base64_encode($productImage);
+            
                 echo '
                 <div class="cart-item">
                     <div class="item-details">
-                            <img src="data:image/jpeg;base64,' . $imageData . '" alt="Product Image">
-                        <div class="text-details">
-                            <span>' . htmlspecialchars($productName) . '</span>
-                            <small>(Rs. ' . htmlspecialchars($productPrice) . ' per product)</small>
-                        </div>
+                        <img src="data:image/jpeg;base64,' . $imageData . '" alt="Product Image">
+                        <span>' . htmlspecialchars($productName) . '</span>
+                        <small>(Rs. ' . htmlspecialchars($productPrice) . ' per item)</small>
                     </div>
-                    <div class="item-meta">
-                        <span>Qty: ' . htmlspecialchars($productQuantity) . '</span>
-                        <span>Rs. ' . htmlspecialchars($totalPrice) . '</span>
-                    </div>
-                </div>
-                
-                ';
+                    &nbsp; &nbsp;
+                    <span style="display: inline-block; margin-right: 5px;">
+                        Qty: ' . htmlspecialchars($productQuantity) . '
+                    </span>
+                    <span style="display: inline-block;">
+                        Rs. ' . htmlspecialchars($totalPrice) . '
+                    </span>
+                </div>';
             }
+
+            echo '<div class="cart-total" style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #ccc; text-align: right;">
+                <small>Shipping Fee: Rs. 0 (Free Delivery)</small>
+                <br>
+                <strong>Total Amount: Rs. ' . number_format($totalAmount, 2) . '</strong> </div>';
+
+            
             ?>
     </div>
 

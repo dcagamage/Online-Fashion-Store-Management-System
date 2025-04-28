@@ -1,23 +1,19 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "pro1");
+require_once 'includes/dbh.inc.php';
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM product1 WHERE Category IN ('Pants', 'Shirt', 'Tshirt') AND Status = 'available'";
+$sql = "SELECT * FROM product WHERE Category IN ('Pants', 'Shirt', 'T-Shirt') AND Status = 'available'";
 $result = $conn->query($sql);
 $products=[
     'Pants' => [],
     'Shirt' => [],
-    'Tshirt' => []
+    'T-Shirt' => []
 ];
 
 
 if ($result->num_rows > 0) {
     while ($product = $result->fetch_assoc()) {
         $category = $product['Category']; // Directly use the Category column value
-        if (in_array($category, ['Pants', 'Shirt', 'Tshirt'])) {
+        if (in_array($category, ['Pants', 'Shirt', 'T-Shirt'])) {
             $products[$category][] = $product; // Add product to the corresponding category array
         }
     }
@@ -98,11 +94,11 @@ if ($result->num_rows > 0) {
 
             <br><br>
 
-            <!--tshirt section-->
+            <!--t-Shirt section-->
 
             <h3>T-SHIRTS</h3>
             <hr>
-            <?php foreach ($products['Tshirt'] as $product): ?>
+            <?php foreach ($products['T-Shirt'] as $product): ?>
 				<div class="product text-center col-lg-3 col-md-4 col-12">
 				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
              alt="<?= htmlspecialchars($product['Name']); ?>">

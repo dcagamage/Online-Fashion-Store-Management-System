@@ -49,6 +49,15 @@
                         <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Message Type</label>
+                        <select id="message-type" name="message-type" required>
+                            <option value="General">General</option>
+                            <option value="Inquiry">Inquiry</option>
+                        </select>
+                    </div>
+
+
+                    <div class="mb-3">
                         <label class="form-label">Message</label>
                         <textarea class="form-control" name="message" rows="4" placeholder="Your message" required></textarea>
                     </div>

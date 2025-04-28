@@ -5,6 +5,7 @@ include_once 'dbh.inc.php';
 if (isset($_POST["submit"])) {
     $name = $_POST["name"];
     $email = $_POST["email"];
+    $messageType = $_POST["message-type"];
     $messageContent = $_POST["message"];
 
     // Check if user is logged in
@@ -24,9 +25,6 @@ if (isset($_POST["submit"])) {
         header("location: ../contact-us.php?error=stmtfailed");
         exit();
     }
-
-    // Set "Message_type" to something like 'General' or 'Inquiry'
-    $messageType = "General"; 
 
     mysqli_stmt_bind_param($stmt, "iss", $customer_id, $messageType, $messageContent);
     mysqli_stmt_execute($stmt);

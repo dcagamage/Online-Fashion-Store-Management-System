@@ -16,7 +16,7 @@
         echo $_SESSION["username"] . ' !'; 
     } else {
         echo 'user !';
-    } 
+    }
     ?>
 </h1>
 -->
@@ -27,12 +27,11 @@
         <div class="row">
             <div class="col-2">
                 <h1>Elevate Your Style <br> Shop the Latest Trends!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Where elegance meets everyday wear – redefine your wardrobe with effortless style.</p>
                 <!-- <a href="" class="btn">Explore Now &#8594;</a> -->
             </div>
             <div class="col-2">
-                <img src="https://img.freepik.com/premium-vector/colorful-outline-icons-fashion-accessories_123891-90249.jpg?semt=ais_hybrid" alt="hero-img">    
+                <img src="images/Vougue-Vista-Hero-Image.jpg" alt="hero-img">    
             </div>
         </div>
 		</div>
@@ -63,37 +62,33 @@
     
     <!--featured products-->  
     <div class="small-container">
-        <h2 class="title">Featured Products</h2>
-        <div class="row" style="align-items: center;">
+    <h2 class="title">Featured Products</h2>
+    <div class="row" style="align-items: center;">
+        <?php
+        include 'includes/dbh.inc.php';
+
+        // Fetch 4 random products
+        $query = "SELECT * FROM product ORDER BY RAND() LIMIT 4";
+        $result = mysqli_query($conn, $query);
+
+        // Loop through products
+        while ($row = mysqli_fetch_assoc($result)) {
+            $imageData = base64_encode($row['Image']);
+            $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+            ?>
             <div class="col-4">
-                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
-                <img src="images/Product/36.jpg">
-                <h4>Printed Top</h4>
-                <p>Rs. 2500.00</p>
-                <button class="add-cart-btn">Add to Cart</button>
+                <img src="<?php echo $imageSrc; ?>" alt="<?php echo htmlspecialchars($row['Name']); ?>">
+                <h4><?php echo $row['Name']; ?></h4>
+                <p>Rs. <?php echo number_format($row['Price'], 2); ?></p>
             </div>
-            <div class="col-4">
-                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
-                <img src="images/Product/46.jpg">
-                <h4>Long Sleeve Casual Shirt</h4>
-                <p>Rs. 2000.00</p>
-                <button class="add-cart-btn">Add to Cart</button>                
+            <?php
+            }
+            ?>
             </div>
-            <div class="col-4">
-                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
-                <img src="images/Product/56.jpg">
-                <h4>Floral Casual Dress</h4>
-                <p>Rs. 1500.00</p>
-                <button class="add-cart-btn">Add to Cart</button>
-            </div>
-            <div class="col-4">
-                <!-- <img src="https://cynthiarenee.com/wp-content/uploads/2018/11/placeholder-product-image.png"> -->
-                <img src="images/Product/66.jpg">
-                <h4>Graphic T-Shirt</h4>
-                <p>Rs. 1000.00</p>
-                <button class="add-cart-btn">Add to Cart</button>
-            </div>
-        </div>
+            <a href="product-women.php">
+                <button class="show-more-btn">Show More...</button>
+            </a>
+            
     </div>
 
     <!--offer-->
@@ -101,16 +96,14 @@
         <div class="small-container">
             <div class="row">
                 <div class="col-2">
-                    <img src="https://i.fbcd.co/products/resized/resized-750-500/art-19-997a06be01fe62beb494d27e44512c9a5ed537a136180cb38fa19ba3b3cd57bb.jpg" class="offer-img">
+                    <img src="images/free_shipping.png" class="offer-img">
                 </div>
                 <div class="col-2">
                     <p>Exclusively Deals on Vogue Vista</p>
-                    <h1>Up to 30% off</h1>
-                    <small>Lorem ipsum dolor sit amet consectetur adipisicing 
-                        elit. Facere assumenda doloribus perferendis nulla 
-                        temporibus deserunt error velit aliquam.</small>
+                    <h1>Enjoy Free Shipping on All Orders!</h1>
+                    <small>Shop your favorite styles and get them delivered to your doorstep at no extra cost. 
+                        Fashion made easier, just for you!</small>
                         <br>
-                    <a href="#" class="btn">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -122,9 +115,8 @@
             <div class="row">
                 <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                    <p>Lorem ipsum dolor sit amet, consectetur 
-                        adipisicing elit. Adipisci quaerat incidunt, 
-                        deserunt laboriosam id similique.</p>
+                    <p>"I’m so impressed with the variety and style choices! Every piece I’ve bought feels unique and high-quality. 
+                        Plus, their website made shopping super easy and fun.</p>
                     <div class="rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -133,13 +125,12 @@
                         <i class="fa fa-star-o"></i>
                     </div>
                     <img src="https://www.shutterstock.com/image-vector/avatar-photo-default-user-icon-600nw-2345549599.jpg">
-                    <h3>Customer 1</h3>
+                    <h3>Dasith S.</h3>
                 </div>
                 <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                    <p>Lorem ipsum dolor sit amet, consectetur 
-                        adipisicing elit. Adipisci quaerat incidunt, 
-                        deserunt laboriosam id similique.</p>
+                    <p>Stylish, trendy, and affordable – everything I want in a fashion store! 
+                        My order arrived quickly, and the packaging was beautiful. I'll definitely be coming back for more.</p>
                     <div class="rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -148,22 +139,21 @@
                         <i class="fa fa-star-half-o"></i>
                     </div>
                     <img src="https://www.shutterstock.com/image-vector/avatar-photo-default-user-icon-600nw-2345549599.jpg">
-                    <h3>Customer 2</h3>
+                    <h3>Sashini A.</h3>
                 </div>
                 <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                    <p>Lorem ipsum dolor sit amet, consectetur 
-                        adipisicing elit. Adipisci quaerat incidunt, 
-                        deserunt laboriosam id similique.</p>
+                    <p>Such a wonderful shopping experience! The clothes look even better in real life. 
+                        Love how fresh and trendy everything feels!</p>
                     <div class="rating">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
                     </div>
                     <img src="https://www.shutterstock.com/image-vector/avatar-photo-default-user-icon-600nw-2345549599.jpg">
-                    <h3>Customer 3</h3>
+                    <h3>Nadeemal P.</h3>
                 </div>
             </div>
         </div>

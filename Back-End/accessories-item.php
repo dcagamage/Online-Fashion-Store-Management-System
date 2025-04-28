@@ -1,15 +1,11 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "pro1");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'includes/dbh.inc.php';
 
 $productId = isset($_GET['id']) ? $_GET['id'] : null;
 
 if ($productId) {
     // Retrieve the product details using the product ID
-    $sql = "SELECT * FROM product1 WHERE ID = ?";
+    $sql = "SELECT * FROM product WHERE Id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $productId);
     $stmt->execute();
@@ -48,7 +44,7 @@ if ($productId) {
     <!-- Product Details Section -->
     <div class="container mt-5">
         <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 text-end">
             <!-- Display the product image -->
             <img src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" class="img-fluid" alt="<?= htmlspecialchars($product['Name']); ?>" id="productImage">
         </div>

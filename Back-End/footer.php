@@ -2,28 +2,30 @@
     <footer>
         <div class="row">
             <div class="footer-col company-info">
-                <img src="https://t3.ftcdn.net/jpg/03/24/75/46/360_F_324754632_LRC1yH2prRSccyk3gyEF3W8ptZxSElCP.jpg"
-                 alt="Company Logo" class="company-logo">
+                <img src="images/Vogue-Vista-Logo.jpg"
+                 alt="Shop Logo" class="company-logo">
                  <br>
                 <div class="company-text">
                     <h3>Vogue Vista</h3>
-                    <p>"Lorem ipsum dolor sit amet"</p>
+                    <p>"Elevate Your Style, Shop the Latest Trends!"</p>
                 </div>
             </div>
             <div class="footer-col about">
                 <h3>About Us</h3>
-                <p class="about">Lorem, ipsum dolor sit amet illo tio consectetur adipisicing elit. 
-                    Dolore illo recusandae assumenda lorem ipsum dolor sit amet.</p>
+                <p class="about"> 
+                    Our collections are thoughtfully designed to blend modern style with timeless quality, 
+                    offering pieces that move with you through every moment of life.</p>
             </div>
             <div class="footer-col">
-                <h3>Account</h3>
+                <h3>Quick Links</h3>
                 <ul class="menu">
                     <!-- <li><a href="home.html">Home</a></li>
                     <li><a href="">About</a></li>
                     <li><a href="">Services</a></li> -->
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="product-women.php">Products</a></li>
                     <li><a href="#">My Profile</a></li>
-                    <li><a href="#">Shopping Cart</a></li>
-                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="order-status.php">Track Your Orders</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -37,10 +39,10 @@
         <div class="socials">
             <h3>Follow Us</h3>
             <ul class="social_icon">
-                <li><a href=""><ion-icon name="logo-facebook"></ion-icon></a></li>
-                <li><a href=""><ion-icon name="logo-twitter"></ion-icon></a></li>
-                <li><a href=""><ion-icon name="logo-linkedin"></ion-icon></a></li>
-                <li><a href=""><ion-icon name="logo-instagram"></ion-icon></a></li>
+                <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://lk.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
             </ul>
         </div>
         <div class="copyright">

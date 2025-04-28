@@ -1,22 +1,18 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "pro1");
+require_once 'includes/dbh.inc.php';
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM product1 WHERE Category IN ('Boy', 'Girl') AND Status = 'available'";
+$sql = "SELECT * FROM product WHERE Category IN ('Boys', 'Girls') AND Status = 'available'";
 $result = $conn->query($sql);
 $products=[
-    'Boy' => [],
-    'Girl' => []
+    'Boys' => [],
+    'Girls' => []
 ];
 
 
 if ($result->num_rows > 0) {
     while ($product = $result->fetch_assoc()) {
         $category = $product['Category']; // Directly use the Category column value
-        if (in_array($category, ['Boy', 'Girl'])) {
+        if (in_array($category, ['Boys', 'Girls'])) {
             $products[$category][] = $product; // Add product to the corresponding category array
         }
     }
@@ -63,7 +59,7 @@ if ($result->num_rows > 0) {
 
             <h3>GIRLS</h3>
             <hr>
-            <?php foreach ($products['Girl'] as $product): ?>
+            <?php foreach ($products['Girls'] as $product): ?>
 				<div class="product text-center col-lg-3 col-md-4 col-12">
 				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
              alt="<?= htmlspecialchars($product['Name']); ?>">
@@ -81,7 +77,7 @@ if ($result->num_rows > 0) {
 
             <h3>BOYS</h3>
             <hr>
-            <?php foreach ($products['Boy'] as $product): ?>
+            <?php foreach ($products['Boys'] as $product): ?>
 				<div class="product text-center col-lg-3 col-md-4 col-12">
 				<img class="img-fluid mb-3" src="data:image/jpeg;base64,<?= base64_encode($product['Image']); ?>" 
              alt="<?= htmlspecialchars($product['Name']); ?>">
