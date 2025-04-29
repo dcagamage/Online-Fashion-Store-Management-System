@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Cart not found!");
     }
 
-    $cartId = $cartRow['Id'];
+    $cartId = 1;
 
     $ordered_date = date("Y-m-d");
     $ordered_time = date("H:i:s");
@@ -59,6 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_stmt_execute($insertStmt)) {
         // Order inserted successfully
+        $deleteCartProducts = "DELETE FROM cart_product WHERE Cart_id = ?";
+        $deleteStmt = mysqli_prepare($conn, $deleteCartProducts);
+        mysqli_stmt_bind_param($deleteStmt, "i", $cartId);
+        mysqli_stmt_execute($deleteStmt);
         header("Location: order_success.php"); // Redirect to a success page
         exit();
     } else {
