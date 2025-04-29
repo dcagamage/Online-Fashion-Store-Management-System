@@ -31,13 +31,13 @@
                     if(isset($_SESSION["useremail"])) {
                         // echo '<a href="#" class="action_btn">'.$_SESSION["username"].'</a>';
                         $userid = $_SESSION["userid"];
-                        echo '<a href="Dashboards/UserManagement.html" class="action_btn">
+                        echo '<a href="dashboard-user.php" class="action_btn">
                             <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["username"].'</a>';
                         echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
                         
                     } elseif (isset($_SESSION["adminemail"])) {
                         $adminid = $_SESSION["adminid"]; 
-                        echo '<a href="dashboard-Admin.php" class="action_btn">
+                        echo '<a href="dashboard-admin.php" class="action_btn">
                             <i class="fa-solid fa-circle-user user-icon"></i>'.$_SESSION["adminname"].'</a>';
                         echo '<a href="includes/logout.inc.php" class="action_btn">Logout</a>';
 

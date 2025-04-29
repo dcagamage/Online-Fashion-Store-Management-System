@@ -110,7 +110,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <option value="Cash on Delivery">Cash on Delivery</option>
                 <option value="Credit Card">Credit Card</option>
                 <option value="Debit Card">Debit Card</option>
-                <option value="PayPal">PayPal</option>
             </select>
 
             <button type="submit">Complete Order</button>

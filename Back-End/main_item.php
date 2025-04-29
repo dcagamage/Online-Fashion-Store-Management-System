@@ -56,15 +56,6 @@ include_once 'navbar.php';
             <h4 id="productPrice">Rs. <?= number_format($product['Price'], 2, '.', '') ?></h4>
             <p id="productDescription"><?= htmlspecialchars($product['Product_detail']); ?></p>
             
-            <label for="size" class="form-label">Select Size:</label>
-            <select id="size" class="form-select">
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-            </select>
-            
-            
             <form action="add-to-cart.php" method="post">
                 <input type="hidden" name="product_id" value="<?= $product['Id']; ?>">
     

@@ -18,7 +18,7 @@
                     <h2>Log In</h2>
 
                     <form action="includes/login.inc.php" method="post">
-                        <input type="text" name="uid" placeholder="User Name or User E-nail" required autofocus>
+                        <input type="text" name="uid" placeholder="User Name or User E-mail" required autofocus>
                         <input type="password" name="pwd" placeholder="User Password" required autofocus>
                         <button class="btn" name="submit" type="submit">
                             Login
