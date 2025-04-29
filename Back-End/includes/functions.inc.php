@@ -1,8 +1,8 @@
 <?php
 
-function emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat){
+function emptyInputSignup($name,$email,$pwd,$pwdRepeat){
     $result;
-    if(empty($name) || empty($email) || empty($username) || empty($pwd) ||empty($pwdRepeat)){
+    if(empty($name) || empty($email) || empty($pwd) ||empty($pwdRepeat)){
         $result = true;
     } else {
         $result = false;
@@ -34,7 +34,7 @@ function pwdMatch($pwd, $pwdRepeat){
     return $result;
 }
 
-function uidExists($conn, $username, $email){
+function uidExists($conn, $name, $email){
     $sql = "SELECT * FROM customer WHERE Name = ? OR Email = ? ;";
     
     $stmt = mysqli_stmt_init($conn);
@@ -43,7 +43,7 @@ function uidExists($conn, $username, $email){
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+    mysqli_stmt_bind_param($stmt, "ss", $name, $email);
     mysqli_stmt_execute($stmt);
     $resultData = mysqli_stmt_get_result($stmt);
 
@@ -57,7 +57,7 @@ function uidExists($conn, $username, $email){
 
 }
 
-function adminExists($conn, $username, $email) {
+function adminExists($conn, $name, $email) {
     $sql = "SELECT * FROM admin WHERE Name = ? OR Email = ?;";
     
     $stmt = mysqli_stmt_init($conn);
@@ -66,7 +66,7 @@ function adminExists($conn, $username, $email) {
         exit();
     }
     
-    mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+    mysqli_stmt_bind_param($stmt, "ss", $name, $email);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);

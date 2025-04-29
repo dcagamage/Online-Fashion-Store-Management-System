@@ -57,8 +57,20 @@ if ($productId) {
             <label for="quantity" class="form-label mt-2">Quantity:</label>
             <input type="number" id="quantity" class="form-control" value="1" min="1">
             
-            <button class="btn btn-primary mt-3" onclick="addToCart()">Add to Cart</button>
-            <button class="btn btn-outline-danger mt-3" onclick="addToWishlist()">Wishlist</button>
+            <form action="add-to-cart.php" method="post">
+                <input type="hidden" name="product_id" value="<?= $product['Id']; ?>">
+    
+                <label for="quantity" class="form-label mt-2">Quantity:</label>
+                <input type="number" name="quantity" id="quantity" class="form-control" value="1" min="1" required>
+    
+                <button type="submit" class="btn btn-primary mt-3">Add to Cart</button>
+            </form>
+
+            <form action="add-to-wishlist.php" method="post">
+                <input type="hidden" name="product_id" value="<?= $product['Id']; ?>">
+    
+                <button type="submit" class="btn btn-outline-danger mt-3">Add to Wishlist</button>
+            </form>
         </div>
         </div>
     </div><br>

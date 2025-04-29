@@ -2,17 +2,16 @@
 if(isset($_POST["submit"])){
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
 
-    $emptyInput = emptyInputSignup($name,$email,$username,$pwd,$pwdRepeat);
+    $emptyInput = emptyInputSignup($name,$email,$pwd,$pwdRepeat);
     $invalidEmail = invalidEmail($email);
     $pwdMatch = pwdMatch($pwd, $pwdRepeat);
-    $uidExists = uidExists($conn, $username, $email); 
+    $uidExists = uidExists($conn, $name, $email); 
 
     if($emptyInput !== false){
         header("Location:../register.php?error=emptyinput");
@@ -27,11 +26,11 @@ if(isset($_POST["submit"])){
         exit();
     }
     if($uidExists !== false){
-        header("Location:../register.php?error=usernametaken");
+        header("Location:../register.php?error=nametaken");
         exit();
     }
 
-    createUser($conn, $name, $email, $username, $pwd);
+    createUser($conn, $name, $email, $pwd);
 
 
 }

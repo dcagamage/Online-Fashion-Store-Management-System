@@ -21,8 +21,6 @@
                         <input type="text" name="name" placeholder="Name" required autofocus>
                         <label for="email">E-mail:</label>
                         <input type="email" name="email" placeholder="E-mail address" required autofocus>
-                        <label for="lname">Username:</label>
-                        <input type="text" name="uid" placeholder="Username" required autofocus>
                         <label for="sPwd">Set Password:</label>
                         <input type="password" name="pwd" placeholder="New Password" required autofocus>
                         <label for="cPwd">Confirm Password:</label>

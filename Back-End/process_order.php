@@ -34,15 +34,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ordered_time = date("H:i:s");
     $payment_status = "Pending";
     $status = "Processing";
-    $delivery_id = NULL;
 
     // Insert into order_table
     $insertSql = "INSERT INTO order_table 
-    (Phone_number, Address, Address_type, Payment_method, Ordered_date, Ordered_time, Payment_status, Status, Cart_id, Delivery_id) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    (Phone_number, Address, Address_type, Payment_method, Ordered_date, Ordered_time, Payment_status, Status, Cart_id) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $insertStmt = mysqli_prepare($conn, $insertSql);
-    mysqli_stmt_bind_param($insertStmt, "ssssssssii", 
+    // if (!$insertStmt) {
+    //     die("SQL error: " . mysqli_error($conn));
+    // }
+    
+    mysqli_stmt_bind_param($insertStmt, "ssssssssi", 
         $phone_number, 
         $address, 
         $address_type, 
@@ -51,8 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ordered_time, 
         $payment_status, 
         $status, 
-        $cartId, 
-        $delivery_id
+        $cartId
     );
 
     if (mysqli_stmt_execute($insertStmt)) {

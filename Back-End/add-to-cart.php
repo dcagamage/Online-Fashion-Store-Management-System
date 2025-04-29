@@ -3,8 +3,7 @@ session_start();
 require_once 'includes/dbh.inc.php';
 
 if (!isset($_SESSION['userid'])) {
-
-echo "Logged in as: " . ($_SESSION['userid'] ?? 'Not logged in');
+    header("Location: login.php");
     exit;
 }
 

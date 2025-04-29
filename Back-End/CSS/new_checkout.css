@@ -32,6 +32,22 @@ body {
     align-items: center;
     margin-bottom: 15px;
 }
+.cart-item .delete{
+    padding: 10px;
+    background: red;
+    border-radius: 60px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delete-icon:hover{
+    transform: scale(1.10);
+    transition: transform 0.2s ease-in-out;
+}
 .item-details {
     display: flex;
     align-items: center;
