@@ -11,9 +11,9 @@ $products=[
 
 if ($result->num_rows > 0) {
     while ($product = $result->fetch_assoc()) {
-        $category = $product['Category']; // Directly use the Category column value
+        $category = $product['Category'];
         if (in_array($category, ['Boys', 'Girls'])) {
-            $products[$category][] = $product; // Add product to the corresponding category array
+            $products[$category][] = $product;
         }
     }
 } else {

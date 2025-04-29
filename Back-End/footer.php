@@ -19,9 +19,6 @@
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul class="menu">
-                    <!-- <li><a href="home.html">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Services</a></li> -->
                     <li><a href="home.php">Home</a></li>
                     <li><a href="product-women.php">Products</a></li>
                     <li><a href="#">My Profile</a></li>
@@ -54,8 +51,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="JS/home.js"></script>
-	<script src="JS/cart.js"></script>
-    <!-- <script src="JS/cart.js"></script> -->
+	<!-- <script src="JS/cart.js"></script> -->
 </body>
 
 </html>

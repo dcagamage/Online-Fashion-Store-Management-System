@@ -15,15 +15,15 @@
                 <li><a href="contact-us.php">Contact Us</a></li>
             </ul>
             <div class="btn_container">
-                <i class="fa-regular fa-heart heart-icon" id="wishlist"></i>
-                <!-- <a href="#" class="py-2 rounded-pill color-primary-bg">
-                        <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                        <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
-                    </a> -->
-                
+                    <a href="wishlist.php">
+                        <i class="fa-regular fa-heart heart-icon" id="wishlist"></i>
+                    </a>
                 <div class="cart-container">
-                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
-                    <span class="cart-item-count">0</span> 
+                    <a href="cart.php">
+                        <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                    </a>
+                    
+                    <span class="cart-item-count"><?php echo $cartItemCount; ?></span>
                 </div>
 
 
@@ -48,9 +48,6 @@
                     }
                 ?>
                 
-                <!-- <a href="login.html">
-                    <i class="fa-regular fa-circle-user user-icon" href="Login-Register/login.html"></i>
-                </a> -->
                 <div class="toggle_btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
@@ -84,23 +81,4 @@
         </div>
     </header> 
 	
-	<!--backdrop-->
-    <div class="backdrop"></div>
-
-    <!-- Cart -->
-    <div class="cart">
-        <h2 class="cart-title">Cart</h2>
-        <div class="cart-content">
-        </div>
-        <div class="total">
-            <div class="total-title">Total</div>
-            <div class="total-price">Rs: 0/=</div>
-    
-        </div>
-        <form action="new_checkout.php" method="POST">
-            <button class="btn-buy" type="submit" name="checkout">Buy Now</button>
-        </form>
-
-        <i class="fa-solid fa-xmark close"></i>
-    </div>
     <!-- End of NavBar -->

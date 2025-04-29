@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $ordered_date = date("Y-m-d");
     $ordered_time = date("H:i:s");
-    $payment_status = "Pending"; // Default value
-    $status = "Processing";      // Default value
+    $payment_status = "Pending";
+    $status = "Processing";
     $delivery_id = NULL;
 
     // Insert into order_table
@@ -56,12 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     if (mysqli_stmt_execute($insertStmt)) {
-
-        $deleteCartProducts = "DELETE FROM cart_product WHERE Cart_id = ?";
-        $deleteStmt = mysqli_prepare($conn, $deleteCartProducts);
-        mysqli_stmt_bind_param($deleteStmt, "i", $cartId);
-        mysqli_stmt_execute($deleteStmt);
-
         // Order inserted successfully
         header("Location: order_success.php"); // Redirect to a success page
         exit();

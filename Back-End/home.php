@@ -85,6 +85,7 @@
             }
             ?>
             </div>
+            
             <a href="product-women.php">
                 <button class="show-more-btn">Show More...</button>
             </a>
@@ -122,7 +123,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star"></i>
                     </div>
                     <img src="https://www.shutterstock.com/image-vector/avatar-photo-default-user-icon-600nw-2345549599.jpg">
                     <h3>Dasith S.</h3>
@@ -150,7 +151,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
                     </div>
                     <img src="https://www.shutterstock.com/image-vector/avatar-photo-default-user-icon-600nw-2345549599.jpg">
                     <h3>Nadeemal P.</h3>

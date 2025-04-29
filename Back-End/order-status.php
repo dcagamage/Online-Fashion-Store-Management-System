@@ -97,28 +97,7 @@ $result = $stmt->get_result();
                 <p><strong>Ordered Date:</strong> <?= htmlspecialchars($data['Ordered_date']) ?></p>
                 <p><strong>Ordered Time:</strong> <?= htmlspecialchars($data['Ordered_time']) ?></p>
             </div>
-
-
-            <!-- <div class="step-section">
-                <h4>Status:</h4>
-                <div class="status-tracker">
-                    <?php
-                    $steps = [
-                        'Ordered' => '🛒',
-                        'Packed' => '📦',
-                        'Shipped' => '🚚',
-                        'Out for Delivery' => '📍',
-                        'Delivered' => '✅'
-                    ];
-                    $statusReached = true;
-                    foreach ($steps as $step => $icon) {
-                        $active = $statusReached ? 'step-box active' : 'step-box';
-                        echo "<div class='$active'><div class='icon'>$icon</div><div class='label'>$step</div></div>";
-                        if ($step === $data['Status']) $statusReached = false;
-                    }
-                    ?>
-                </div>
-            </div> -->
+            
         </div>
     <?php endforeach; ?>
 <?php elseif ($error): ?>

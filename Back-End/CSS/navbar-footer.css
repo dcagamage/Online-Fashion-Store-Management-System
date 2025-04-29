@@ -123,7 +123,7 @@ header{
     border-radius: 50%;
     line-height: 1;
     z-index: 10;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .heart-icon:hover::before{
