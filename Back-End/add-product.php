@@ -131,6 +131,7 @@ if ($isEdit && isset($_GET['Id'])) {
       <select class="form-select" name="Status" required>
         <option value="In Stock" <?php if($Status == 'In Stock') echo 'selected'; ?>>In Stock</option>
         <option value="Out of Stock" <?php if($Status == 'Out of Stock') echo 'selected'; ?>>Out of Stock</option>
+        <option value="Out of Stock" <?php if($Status == 'Out of Stock') echo 'selected'; ?>>Available</option>
       </select>
     </div>
 
